@@ -26,3 +26,13 @@ Use the CSV template in the app. Structured JSON can be an array or an object wi
 ## Storage and deployment
 
 No accounts, database, paid API, server-side telemetry or background jobs. Personal data and the cached feed live in localStorage; back up regularly. Quota/browser clearing can cause loss. Do not treat published results across different systems as controlled tests. Hosting is Vercel static hosting. Run a local server, e.g. python -m http.server 8080, and use the direct upstream fallback during local development.
+
+### Expanded sources (2026-11-26)
+
+All sources are adapted under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Each online feed refreshes independently; when a feed fails its last successfully cached results remain available.
+
+- SteamFPS — SteamOS Playability Dataset (https://steamfps.com/state-of-steamos), https://github.com/xpressmike/steamos-playability-dataset, with upstream measurement credit to https://deck-verified.games. Import only rows with deck_provenance=community and positive deck_fps. These are representative community FPS values rather than controlled averages, and no unknown settings or frame-time metrics are inferred. The settings optimiser excludes these rows.
+- TechFuelHQ — ASUS ROG Astral RTX 5080 OC First-Party Bench Dataset (https://techfuelhq.com/data/gpu/rog-astral-rtx-5080-oc-2026-06-09/). Import measured 4K gaming and frame generation configurations. The independently logged June 28 GPU sensor time series is a separate thermal-only record with temperature, board power, utilisation and clock traces. No FPS or FPS/watt is attributed to that unrelated sensor session.
+- PCGameBenchmarks (https://pcgamebenchmarks.com, https://github.com/emilioagustin83/pc-game-fps-dataset). Dedicated searchable FPS estimates tab, 1080p High across 12 reference GPUs. The data is loaded lazily and is not part of the benchmark ranking or comparison engine. The source methodology (https://pcgamebenchmarks.com/methodology) describes typical error of around 30%, or 40% for integrated graphics. Model values are not measurements.
+
+Fixed Vercel rewrites are read-only and do not accept arbitrary upstream URLs. CSV sources are bounded by the existing 10 MB request limit. Upstream schema changes may require adapter updates. Unknown data stays null.
