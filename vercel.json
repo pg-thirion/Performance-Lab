@@ -3,6 +3,22 @@
     {
       "source": "/data/benchmarks",
       "destination": "https://opengpubenchmarks.com/api/v1/dashboard.json"
+    },
+    {
+      "source": "/data/steam-deck",
+      "destination": "https://raw.githubusercontent.com/xpressmike/steamos-playability-dataset/main/steamfps-games.csv"
+    },
+    {
+      "source": "/data/pc-estimates",
+      "destination": "https://raw.githubusercontent.com/emilioagustin83/pc-game-fps-dataset/main/data/games.csv"
+    },
+    {
+      "source": "/data/techfuel",
+      "destination": "https://techfuelhq.com/data/gpu/rog-astral-rtx-5080-oc-2026-06-09/dataset.json"
+    },
+    {
+      "source": "/data/techfuel-telemetry",
+      "destination": "https://techfuelhq.com/data/gpu/rog-astral-rtx-5080-oc-2026-06-09/sustained-gaming-telemetry-2026-06-28.csv"
     }
   ],
   "headers": [
